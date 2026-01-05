@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahi-ve UPI Payment QR Code Generator</title>
+
+    <!-- QRCode.js (client-side QR generator) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Mahi-ve UPI Payment QR Code Generator</h2>
+
+        <!-- UPI fields -->
+        <label for="pa">Payee UPI ID (pa)</label>
+        <input id="pa" placeholder="yourupi@bank" />
+
+        <label for="pn">Payee Name (pn)</label>
+        <input id="pn" placeholder="Your Name / Business" />
+
+        <label for="am">Amount (am)</label>
+        <input id="am" type="number" step="0.01" placeholder="100.00" />
+
+        <label for="tn">Transaction Note (tn)</label>
+        <textarea id="tn" rows="2" placeholder="Thanks for your purchase"></textarea>
+
+        <label for="cu">Currency (cu)</label>
+        <select id="cu">
+            <option value="INR" selected>INR</option>
+        </select>
+
+        <button class="btn" onclick="generateUPI()">Generate UPI Link & QR</button>
+
+        <div class="link-box" id="upiLinkBox"></div>
+
+        <div id="qrcode"></div>
+
+        <small>
+            Tip: On mobile, tap the button again to open the link in a UPI app.
+            On another phone, scan the QR from any UPI app.
+        </small>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
